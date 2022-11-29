@@ -1,0 +1,1 @@
+<!-- Allow users to register using a form with inputs for email, fname, lname, password, confirm password   -->

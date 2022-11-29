@@ -1,0 +1,1 @@
+<!-- Allow users to login using a form with inputs for email and password   -->
