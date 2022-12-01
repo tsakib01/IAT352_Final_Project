@@ -66,7 +66,7 @@ header nav div.tooltip img {
     margin-top: 5px;
     width: 220px;
     margin-left: -198px;
-    transition:all 0.3s;
+    transition: all 0.3s;
 }
 
 .tooltip .tooltiptext p {
@@ -92,7 +92,136 @@ header nav div.tooltip img {
     border-bottom: 2px solid var(--md-sys-color-primary);
 }
 
-.content{
+.content {
     padding-top: 100px;
     margin: 0 10%;
+}
+
+.signup {
+    text-align: center;
+}
+
+.signup h1 {
+    color: var(--md-sys-color-on-background);
+}
+
+.signup p {
+    color: var(--md-sys-color-error);
+}
+
+.signup input[type=text],
+.signup input[type=email],
+.signup input[type=password] {
+    border: 2px solid var(--md-sys-color-primary);
+    border-radius: 10px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    outline: none;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+.signup input[type=text]:focus,
+.signup input[type=email]:focus,
+.signup input[type=password]:focus {
+    background-color: var(--md-sys-color-primary-container);;
+    border: 2px solid var(--md-sys-color-on-secondary-container);
+}
+
+.signup input[type=submit]{
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 20px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+.signup input[type=submit]:hover{
+    background-color: var(--md-sys-color-primary);
+    border: 2px solid var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-radius: 20px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+.login {
+    text-align: center;
+}
+
+.login h1 {
+    color: var(--md-sys-color-on-background);
+}
+
+.login p {
+    color: var(--md-sys-color-error);
+}
+
+.login p a{
+    color: var(--md-sys-color-secondary);
+    transition: all 0.5s;
+}
+
+.login p a:hover{
+    color: var(--md-sys-color-primary);
+}
+
+.login input[type=email],
+.login input[type=password] {
+    border: 2px solid var(--md-sys-color-primary);
+    border-radius: 10px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    outline: none;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+.login input[type=email]:focus,
+.login input[type=password]:focus {
+    background-color: var(--md-sys-color-primary-container);;
+    border: 2px solid var(--md-sys-color-on-secondary-container);
+}
+
+.login input[type=submit]{
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 20px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+.login input[type=submit]:hover{
+    background-color: var(--md-sys-color-primary);
+    border: 2px solid var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-radius: 20px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
 }
