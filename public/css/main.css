@@ -70,11 +70,11 @@ header nav div.tooltip img {
     visibility: hidden;
     opacity: 0;
     text-align: left;
-    padding: 5px;
+    padding: 0.5rem;
     border-radius: 20px;
-    margin-top: 5px;
-    width: 220px;
-    margin-left: -198px;
+    margin-top: 0.5rem;
+    width: 14rem;
+    margin-left: -13rem;
     transition: all 0.3s;
 }
 
@@ -89,7 +89,6 @@ header nav div.tooltip img {
     border-bottom: 2px solid transparent;
     transition: all 0.3s;
 }
-
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
@@ -120,47 +119,41 @@ header nav div.tooltip img {
 .signup input[type=password] {
     border: 2px solid var(--md-sys-color-primary);
     border-radius: 10px;
-    padding: 5px 7px;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: 20rem;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
 .signup input[type=text]:focus,
 .signup input[type=email]:focus,
 .signup input[type=password]:focus {
-    background-color: var(--md-sys-color-primary-container);;
+    background-color: var(--md-sys-color-primary-container);
+    ;
     border: 2px solid var(--md-sys-color-on-secondary-container);
 }
 
-.signup input[type=submit]{
+.signup input[type=submit] {
     background-color: var(--md-sys-color-primary-container);
     border: 2px solid var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     border-radius: 20px;
-    padding: 5px 7px;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
-.signup input[type=submit]:hover{
+.signup input[type=submit]:hover {
     background-color: var(--md-sys-color-primary);
     border: 2px solid var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    border-radius: 20px;
-    padding: 5px 7px;
-    box-sizing: border-box;
-    outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
 }
 
 /* login page */
@@ -177,12 +170,12 @@ header nav div.tooltip img {
     color: var(--md-sys-color-error);
 }
 
-.login p a{
+.login p a {
     color: var(--md-sys-color-secondary);
     transition: all 0.5s;
 }
 
-.login p a:hover{
+.login p a:hover {
     color: var(--md-sys-color-primary);
 }
 
@@ -190,46 +183,40 @@ header nav div.tooltip img {
 .login input[type=password] {
     border: 2px solid var(--md-sys-color-primary);
     border-radius: 10px;
-    padding: 5px 7px;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: 20rem;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
 .login input[type=email]:focus,
 .login input[type=password]:focus {
-    background-color: var(--md-sys-color-primary-container);;
+    background-color: var(--md-sys-color-primary-container);
+    ;
     border: 2px solid var(--md-sys-color-on-secondary-container);
 }
 
-.login input[type=submit]{
+.login input[type=submit] {
     background-color: var(--md-sys-color-primary-container);
     border: 2px solid var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     border-radius: 20px;
-    padding: 5px 7px;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
-.login input[type=submit]:hover{
+.login input[type=submit]:hover {
     background-color: var(--md-sys-color-primary);
     border: 2px solid var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    border-radius: 20px;
-    padding: 5px 7px;
-    box-sizing: border-box;
-    outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
 }
 
 /* All Cameras Page */
@@ -240,8 +227,9 @@ main {
     text-align: center;
 }
 
-main h1{
+main h1 {
     margin-left: 1rem;
+    text-align: left;
 }
 
 .camera-list {
@@ -287,7 +275,7 @@ main h1{
     grid-template-columns: 1fr 1fr;
 }
 
-.camera-details div p{
+.camera-details div p {
     text-align: left;
     margin-bottom: 1.4rem;
     margin-left: 3rem;
@@ -295,17 +283,17 @@ main h1{
     white-space: nowrap;
 }
 
-.camera-details p{
+.camera-details p {
     text-align: center;
 }
 
-.camera-details p a{
+.camera-details p a {
     color: var(--md-sys-color-on-primary);
     text-decoration: underline;
     transition: all 0.3s;
 }
 
-.camera-details p a:hover{
+.camera-details p a:hover {
     color: var(--md-sys-color-error-container);
 }
 
@@ -318,13 +306,23 @@ main h1{
 
 /* show watchlist page */
 
-.watchlist-item{
+main.watchlist {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+main.watchlist h2 {
+    margin-bottom: 0rem;
+}
+
+.watchlist-item {
     display: flex;
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .watchlist-item a {
@@ -337,24 +335,45 @@ main h1{
     height: auto;
 }
 
-.watchlist-item .remove {
-    padding: 1rem;
-    margin: 2rem;
-    border-color: var(--md-sys-color-on-primary);
-    border-radius: 30px;
-    border-style: solid;
-    height: 1rem;
-    transition: all 0.3s;
-}
-
-.watchlist-item .remove:hover {
-    background-color: var(--md-sys-color-primary-container);
-    color: black;
-    font-weight: 500;
-}
-
-main:last-child form{
+main:last-child form {
     text-align: center;
+}
+
+main.watchlist form {
+    text-align: right;
+}
+
+main.watchlist form input {
+    margin-top: 0rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.5s;
+}
+
+.watchlist-item .remove {
+    margin-left: auto;
+    margin-right: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.5s;
 }
 
 main:last-child input {
@@ -372,7 +391,9 @@ main:last-child input {
     transition: all 0.5s;
 }
 
-main:last-child input:hover {
+main:last-child input:hover,
+.watchlist-item .remove:hover,
+main.watchlist form input:hover {
     background-color: var(--md-sys-color-error-container);
     border: 2px solid var(--md-sys-color-error-container);
     color: var(--md-sys-color-on-error-container);
@@ -380,7 +401,7 @@ main:last-child input:hover {
 
 /* about page */
 
-main.aboutpage{
+main.aboutpage {
     max-width: fit-content;
     text-align: left;
 }
