@@ -320,7 +320,7 @@ main {
     font-weight: 500;
 }
 
-main:last-child input {
+.watchlist:last-child input {
     background-color: var(--md-sys-color-primary);
     color: white;
     font-size: 1.3rem;
@@ -329,7 +329,77 @@ main:last-child input {
     border-radius: 20px;
 }
 
-main:last-child input:hover {
+.watchlist:last-child input:hover {
     background-color: lightblue;
     color: black;
+}
+
+
+/* Checkout */
+.checkout {
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    padding: 2rem;
+    max-width: 20rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+.checkout form{
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout form label {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.checkout form label p{
+    display: inline;
+}
+
+.checkout form input {
+    width: 20rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-size: 1.3rem;
+}
+
+
+.checkout form #checkout {
+    margin: 2rem auto;
+    width: 10rem;
+}
+
+.checkout form #checkout:hover {
+    background-color: lightblue;
+}
+
+
+/* About page */
+.about section {
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 50rem;
+}
+
+/* Rentals page */
+main .rental-item {
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 20px;
 }

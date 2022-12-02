@@ -10,7 +10,7 @@
     if(isset($_SESSION['edit']))
         unset($_SESSION['edit']);
 
-    $code = trim($_GET['cid']); // gets the productCode from redirected link
+    $code = trim($_GET['cid']); // gets the camera Id from redirected link
     @$msg = trim($_GET['message']); // gets the message passed with link if not a error suppression is used to prevent throwing an error
 
     // gets all the attributes of the product using productCode
