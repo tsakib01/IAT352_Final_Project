@@ -59,17 +59,17 @@ require_once('../private/shared/public_header.php');
 <form class="signup" action="signup.php" method="post">
     <h1 class="display-large">Sign Up</h1>
     <?php if (!empty($message)) echo "<p class=\"title-medium\">" . $message . '</p>' ?>
-    <input name="fname" type="text" placeholder="Please Enter Your First Name" value="<?php $fname ?>">
+    <input class="title-medium" name="fname" type="text" placeholder="Please Enter Your First Name" value="<?php $fname ?>">
     <br />
-    <input type="text" name="lname" placeholder="Please Enter Your Last Name" value="<?php $lname ?>">
+    <input class="title-medium" type="text" name="lname" placeholder="Please Enter Your Last Name" value="<?php $lname ?>">
     <br />
-    <input type="email" name="email" placeholder="Please Enter Your Email Adress" value="<?php $email ?>">
+    <input class="title-medium" type="email" name="email" placeholder="Please Enter Your Email Adress" value="<?php $email ?>">
     <br />
-    <input type="password" name="password" placeholder="Please Enter Your Password" value="">
+    <input class="title-medium" type="password" name="password" placeholder="Please Enter Your Password" value="">
     <br />
-    <input type="password" name="password2" placeholder="Please Double Confirm Your Password" value="">
+    <input class="title-medium" type="password" name="password2" placeholder="Double Confirm Your Password" value="">
     <br />
-    <input type="submit" name="submit" value="Register">
+    <input class="title-large" type="submit" name="submit" value="Register">
 </form>
 
 <?php
