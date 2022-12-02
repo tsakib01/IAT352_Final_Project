@@ -33,7 +33,7 @@
             $stmt->bind_param('sd',$email,$cid);
             $stmt->execute();
                     
-            $message = urlencode("The model has been added to your <a href=\"addtowatchlist.php\">watchlist</a>.");
+            $message = urlencode("The model has been added to your <a href=\"showwatchlist.php\">watchlist</a>.");
         }
         //fetch the watchlist for the user
         redirect_to("cameradetails.php?cid=$cid&message=$message");

@@ -13,26 +13,26 @@
 ?>
 
 
-<main>
+<main class="aboutpage">
     <section>
-        <h2>Our Story</h2>
-        <p></p>
+        <h2 class="display-medium">Our Story</h2>
+        <p class="headline-medium">hi</p>
     </section>
     <section>
-        <h2>Our Goals</h2>
-        <p></p>
+        <h2 class="display-medium">Our Goals</h2>
+        <p class="headline-medium"></p>
     </section>
     <section>
-        <h2>Contact Us</h2>
-        <p></p>
+        <h2 class="display-medium">Contact Us</h2>
+        <p class="headline-medium"></p>
     </section>
     <section>
-        <h2>Contact Us</h2>
-        <p></p>
+        <h2 class="display-medium">Contact Us</h2>
+        <p class="headline-medium"></p>
     </section>
     <section>
-        <h2>FAQs</h2>
-        <p></p>
+        <h2 class="display-medium">FAQs</h2>
+        <p class="headline-medium"></p>
     </section>
 </main>
 
