@@ -1,4 +1,3 @@
-<!-- Shows all rentals -->
 <?php
     session_start();
     require_once("../private/database.php");
