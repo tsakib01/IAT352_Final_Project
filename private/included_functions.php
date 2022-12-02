@@ -39,7 +39,7 @@
         if (isset($_SESSION['valid_user'])) {
             $query = "SELECT COUNT(*) 
                       FROM watchlist 
-                      WHERE productCode=? 
+                      WHERE cid=? 
                       AND email=?";
             $stmt = $db->prepare($query);
             $stmt->bind_param('ss',$code, $_SESSION['valid_user']);
@@ -51,12 +51,15 @@
     }
 
     // formats the name of the model as a link
-    function format_model_name_as_link($id,$name,$page) {
-        echo "<a href=\"$page?productCode=$id\">$name</a>";
+    function format_model_name_as_link($id,$name,$page,$img,$price) {
+        echo "<a href=\"$page?cid=$id\"> <h2>$name</h2>";
+        echo "<img src=\"$img\" alt=\"Picture of the camera\" width='1302' height='868'>";
+        echo "<p>Price: $ $price</p>";
+        echo "</a>";
     }
 
     // formats the watchlist items as a link
     function format_watchlist_action_link($id,$name,$page) {
-        echo "<a class=\"remove\" href=\"$page?productCode=$id\">$name</a>";
+        echo "<a class=\"remove\" href=\"$page?cid=$id\">$name</a>";
     }
 ?>
