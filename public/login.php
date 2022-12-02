@@ -25,12 +25,13 @@ if (!isset($_POST["submit"])) {
         $pass_hash = $row["password"];
     }
     if (!empty($pass_hash) && password_verify($password, $pass_hash)) {
+        session_start();
         $_SESSION['valid_user'] = $email;
-        $callback_ulr = "index.php";
+        $callback_url = "index.php";
         if (isset($_SESSION['callback_url'])) {
-            $callback_ulr = $_SESSION['callback_url'];
+            $callback_url = $_SESSION['callback_url'];
         }
-        redirect_to($callback_ulr);
+        redirect_to($callback_url);
     } else {
         $message = "Sorry, email and password combination not registered.";
     }
