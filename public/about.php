@@ -23,10 +23,6 @@
         <p class="headline-medium">Email:   grabacam@grabacam.com</p>
     </section>
     <section>
-        <h2 class="display-medium">Contact Us</h2>
-        <p class="headline-medium"></p>
-    </section>
-    <section>
         <h2 class="display-medium">FAQs</h2>
         <p class="headline-medium">Q. What if I lost or broke the camera?</p>
         <p class="headline-medium">A. You can have a buy a insurance while checking out to prevent getting charged for the camera. Or you can email the support to make an arrangement.</p>
