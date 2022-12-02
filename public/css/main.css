@@ -1,9 +1,18 @@
+/* all contents */
 body {
     background-color: var(--md-sys-color-background);
     margin: 0 0;
     font-family: var(--md-sys-typescale-body-large-font-family-name);
+    min-width: min-content;
 }
 
+.content {
+    padding-top: 6.25rem;
+    min-width: min-content;
+    margin: 0 auto;
+}
+
+/* header */
 
 header {
     background-color: var(--md-sys-color-primary);
@@ -32,7 +41,7 @@ header nav a {
     margin: 0 2%;
     line-height: 1;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid transparent;
     transition: all 0.3s;
 }
@@ -62,7 +71,7 @@ header nav div.tooltip img {
     opacity: 0;
     text-align: left;
     padding: 5px;
-    border-radius: 30px;
+    border-radius: 20px;
     margin-top: 5px;
     width: 220px;
     margin-left: -198px;
@@ -92,10 +101,7 @@ header nav div.tooltip img {
     border-bottom: 2px solid var(--md-sys-color-primary);
 }
 
-.content {
-    padding-top: 6.25rem;
-    margin: 0 10%;
-}
+/* signup page */
 
 .signup {
     text-align: center;
@@ -155,8 +161,9 @@ header nav div.tooltip img {
     width: 200px;
     height: 40px;
     margin-bottom: 30px;
-    transition: all 0.5s;
 }
+
+/* login page */
 
 .login {
     text-align: center;
@@ -223,37 +230,42 @@ header nav div.tooltip img {
     width: 200px;
     height: 40px;
     margin-bottom: 30px;
-    transition: all 0.5s;
 }
 
 /* All Cameras Page */
 
 main {
-    max-width: 90rem;
-    margin: 0 auto;    
+    max-width: min-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main h1{
+    margin-left: 1rem;
 }
 
 .camera-list {
-    max-width: 67.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .camera-list a {
     border-radius: 20px;
-    background-color: var(--md-sys-color-primary);
-    color: white;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
     padding: 1rem;
     margin: 1rem;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
 .camera-list a:hover {
-    background-color: lightblue;
-    color: black;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
 }
 
 .camera-list img {
+    border-radius: 20px;
     max-width: 20rem;
     height: auto;
     margin-top: 0.5rem;
@@ -262,10 +274,12 @@ main {
 /* cameradetails page */
 .camera-details {
     background-color: var(--md-sys-color-primary);
-    color: white;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 10px;
+    color: var(--md-sys-color-on-primary);
+    padding: 1rem 4rem;
+    padding-bottom: 4rem;
+    margin: 2rem auto;
+    width: min-content;
+    border-radius: 20px;
 }
 
 .camera-details .grid-item {
@@ -273,15 +287,33 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-.camera-details div {
-    font-size: 1.2rem;
-    margin: 1rem;
+.camera-details div p{
+    text-align: left;
+    margin-bottom: 1.4rem;
+    margin-left: 3rem;
+    width: min-content;
+    white-space: nowrap;
+}
+
+.camera-details p{
+    text-align: center;
+}
+
+.camera-details p a{
+    color: var(--md-sys-color-on-primary);
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+
+.camera-details p a:hover{
+    color: var(--md-sys-color-error-container);
 }
 
 .camera-details img {
     max-width: 50rem;
     height: auto;
     margin: 1rem;
+    border-radius: 20px;
 }
 
 /* show watchlist page */
@@ -289,7 +321,7 @@ main {
 .watchlist-item{
     display: flex;
     background-color: var(--md-sys-color-primary);
-    color: white;
+    color: var(--md-sys-color-on-primary);
     padding: 1rem;
     margin: 1rem;
     border-radius: 10px;
@@ -297,7 +329,7 @@ main {
 
 .watchlist-item a {
     text-decoration: none;
-    color: white;
+    color: var(--md-sys-color-on-primary);
 }
 
 .watchlist-item img {
@@ -308,28 +340,47 @@ main {
 .watchlist-item .remove {
     padding: 1rem;
     margin: 2rem;
-    border-color: white;
+    border-color: var(--md-sys-color-on-primary);
     border-radius: 30px;
     border-style: solid;
     height: 1rem;
+    transition: all 0.3s;
 }
 
 .watchlist-item .remove:hover {
-    background-color: lightblue;
+    background-color: var(--md-sys-color-primary-container);
     color: black;
     font-weight: 500;
 }
 
+main:last-child form{
+    text-align: center;
+}
+
 main:last-child input {
-    background-color: var(--md-sys-color-primary);
-    color: white;
-    font-size: 1.3rem;
-    padding: 1rem;
-    margin: 1rem;
+    margin-left: 1rem;
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
     border-radius: 20px;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 3rem;
+    transition: all 0.5s;
 }
 
 main:last-child input:hover {
-    background-color: lightblue;
-    color: black;
+    background-color: var(--md-sys-color-error-container);
+    border: 2px solid var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+}
+
+/* about page */
+
+main.aboutpage{
+    max-width: fit-content;
+    text-align: left;
 }
