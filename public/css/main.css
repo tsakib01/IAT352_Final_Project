@@ -8,12 +8,12 @@ body {
 header {
     background-color: var(--md-sys-color-primary);
     width: 100%;
-    height: 70px;
+    height: 4.375rem;
     text-align: center;
     position: fixed;
     overflow: hidden;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
 }
 
 header img {
@@ -28,7 +28,7 @@ header nav {
 header nav a {
     color: var(--md-sys-color-on-primary);
     display: inline-block;
-    padding: 10px 15px;
+    padding: .625rem .9375rem;
     margin: 0 2%;
     line-height: 1;
     text-decoration: none;
@@ -43,7 +43,7 @@ header nav a:hover {
 
 header nav div.tooltip img {
     display: inline-block;
-    padding: 10px 15px;
+    padding: .625rem .9375rem;
     margin-left: 0;
     margin-right: 5%;
     line-height: 1;
@@ -51,7 +51,7 @@ header nav div.tooltip img {
 
 .tooltip {
     margin-left: 92%;
-    margin-top: 25px;
+    margin-top: 1.5625rem;
     position: fixed;
 }
 
@@ -93,7 +93,7 @@ header nav div.tooltip img {
 }
 
 .content {
-    padding-top: 100px;
+    padding-top: 6.25rem;
     margin: 0 10%;
 }
 
@@ -224,4 +224,112 @@ header nav div.tooltip img {
     height: 40px;
     margin-bottom: 30px;
     transition: all 0.5s;
+}
+
+/* All Cameras Page */
+
+main {
+    max-width: 90rem;
+    margin: 0 auto;    
+}
+
+.camera-list {
+    max-width: 67.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.camera-list a {
+    border-radius: 20px;
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.camera-list a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+.camera-list img {
+    max-width: 20rem;
+    height: auto;
+    margin-top: 0.5rem;
+}
+
+/* cameradetails page */
+.camera-details {
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.camera-details .grid-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.camera-details div {
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.camera-details img {
+    max-width: 50rem;
+    height: auto;
+    margin: 1rem;
+}
+
+/* show watchlist page */
+
+.watchlist-item{
+    display: flex;
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.watchlist-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.watchlist-item img {
+    max-width: 10rem;
+    height: auto;
+}
+
+.watchlist-item .remove {
+    padding: 1rem;
+    margin: 2rem;
+    border-color: white;
+    border-radius: 30px;
+    border-style: solid;
+    height: 1rem;
+}
+
+.watchlist-item .remove:hover {
+    background-color: lightblue;
+    color: black;
+    font-weight: 500;
+}
+
+main:last-child input {
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 20px;
+}
+
+main:last-child input:hover {
+    background-color: lightblue;
+    color: black;
 }
