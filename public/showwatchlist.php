@@ -26,7 +26,7 @@
     if (isset($message)) echo "<p>$message</p>";
 
     echo "<main class='watchlist'>";
-    echo "<h2>Your Watchlist</h2>";
+    echo "<h2 class='display-medium'>Your Watchlist</h2>";
 
     // if edit option is clicked a session will be created with edit
     // and unset the editing done session if exists
@@ -34,6 +34,31 @@
         $_SESSION['edit'] = $_POST['edit'];
         if(isset($_SESSION['done']))
             unset($_SESSION['done']); 
+    }
+
+    // checks if both edit and done option are submitted
+    // if not then edit button will be display
+    if(!isset($_POST['edit']) && !isset($_SESSION['done']) && !isset($_SESSION['remove'])){
+        echo "<form action='showwatchlist.php' method='post'>";
+        echo "<input class='title-large' type='submit' name='edit' value='Edit Watchlist'>";
+        echo "</form>";
+    }
+
+
+    // checks if editing is not done and edit session is available 
+    // displays the Done Editing button
+    if(!isset($_POST['done']) && isset($_SESSION['edit'])){
+        echo "<form action='showwatchlist.php' method='post'>";
+        echo "<input class='title-large' type='submit' name='done' value='Done Editing'>";
+        echo "</form>";
+    }
+
+    // checks if the watchlist is in editable mode or not
+    // if not in edit mode then edit button is shown
+    if(!isset($_POST['edit']) && isset($_SESSION['done'])){
+        echo "<form action='showwatchlist.php' method='post'>";
+        echo "<input class='title-large' type='submit' name='edit' value='Edit Watchlist'>";
+        echo "</form>";
     }
 
     // if editing done is clicked a session will be create with done
@@ -60,31 +85,6 @@
         format_watchlist_action_link($row[0],"Check Out","checkout.php");
         echo "</div>";
     };
-
-    // checks if both edit and done option are submitted
-    // if not then edit button will be display
-    if(!isset($_POST['edit']) && !isset($_SESSION['done']) && !isset($_SESSION['remove'])){
-        echo "<form action='showwatchlist.php' method='post'>";
-        echo "<input type='submit' name='edit' value='Edit Watchlist'>";
-        echo "</form>";
-    }
-
-
-    // checks if editing is not done and edit session is available 
-    // displays the Done Editing button
-    if(!isset($_POST['done']) && isset($_SESSION['edit'])){
-        echo "<form action='showwatchlist.php' method='post'>";
-        echo "<input type='submit' name='done' value='Done Editing'>";
-        echo "</form>";
-    }
-
-    // checks if the watchlist is in editable mode or not
-    // if not in edit mode then edit button is shown
-    if(!isset($_POST['edit']) && isset($_SESSION['done'])){
-        echo "<form action='showwatchlist.php' method='post'>";
-        echo "<input type='submit' name='edit' value='Edit Watchlist'>";
-        echo "</form>";
-    }
 
 
     echo "</main>";

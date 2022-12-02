@@ -1,9 +1,18 @@
+/* all contents */
 body {
     background-color: var(--md-sys-color-background);
     margin: 0 0;
     font-family: var(--md-sys-typescale-body-large-font-family-name);
+    min-width: min-content;
 }
 
+.content {
+    padding-top: 6.25rem;
+    min-width: min-content;
+    margin: 0 auto;
+}
+
+/* header */
 
 header {
     background-color: var(--md-sys-color-primary);
@@ -32,7 +41,7 @@ header nav a {
     margin: 0 2%;
     line-height: 1;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 3vmin;
     border: 1px solid transparent;
     transition: all 0.3s;
 }
@@ -61,17 +70,17 @@ header nav div.tooltip img {
     visibility: hidden;
     opacity: 0;
     text-align: left;
-    padding: 5px;
-    border-radius: 30px;
-    margin-top: 5px;
-    width: 220px;
-    margin-left: -198px;
+    padding: 0.5rem;
+    border-radius: 3vmin;
+    margin-top: 0.5rem;
+    width: 14rem;
+    margin-left: -13rem;
     transition: all 0.3s;
 }
 
 .tooltip .tooltiptext p {
     color: var(--md-sys-color-on-primary-container);
-    margin: 5% 10%;
+    margin: 1rem 2rem;
 }
 
 .tooltip .tooltiptext p a {
@@ -80,7 +89,6 @@ header nav div.tooltip img {
     border-bottom: 2px solid transparent;
     transition: all 0.3s;
 }
-
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
@@ -92,10 +100,7 @@ header nav div.tooltip img {
     border-bottom: 2px solid var(--md-sys-color-primary);
 }
 
-.content {
-    padding-top: 6.25rem;
-    margin: 0 10%;
-}
+/* signup page */
 
 .signup {
     text-align: center;
@@ -113,50 +118,45 @@ header nav div.tooltip img {
 .signup input[type=email],
 .signup input[type=password] {
     border: 2px solid var(--md-sys-color-primary);
-    border-radius: 10px;
-    padding: 5px 7px;
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: 20rem;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
 .signup input[type=text]:focus,
 .signup input[type=email]:focus,
 .signup input[type=password]:focus {
-    background-color: var(--md-sys-color-primary-container);;
+    background-color: var(--md-sys-color-primary-container);
+    ;
     border: 2px solid var(--md-sys-color-on-secondary-container);
 }
 
-.signup input[type=submit]{
+.signup input[type=submit] {
     background-color: var(--md-sys-color-primary-container);
     border: 2px solid var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    border-radius: 20px;
-    padding: 5px 7px;
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
-.signup input[type=submit]:hover{
+.signup input[type=submit]:hover {
     background-color: var(--md-sys-color-primary);
     border: 2px solid var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    border-radius: 20px;
-    padding: 5px 7px;
-    box-sizing: border-box;
-    outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
-    transition: all 0.5s;
 }
+
+/* login page */
 
 .login {
     text-align: center;
@@ -170,90 +170,90 @@ header nav div.tooltip img {
     color: var(--md-sys-color-error);
 }
 
-.login p a{
+.login p a {
     color: var(--md-sys-color-secondary);
     transition: all 0.5s;
 }
 
-.login p a:hover{
+.login p a:hover {
     color: var(--md-sys-color-primary);
 }
 
 .login input[type=email],
 .login input[type=password] {
     border: 2px solid var(--md-sys-color-primary);
-    border-radius: 10px;
-    padding: 5px 7px;
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: 20rem;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
 .login input[type=email]:focus,
 .login input[type=password]:focus {
-    background-color: var(--md-sys-color-primary-container);;
+    background-color: var(--md-sys-color-primary-container);
+    ;
     border: 2px solid var(--md-sys-color-on-secondary-container);
 }
 
-.login input[type=submit]{
+.login input[type=submit] {
     background-color: var(--md-sys-color-primary-container);
     border: 2px solid var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    border-radius: 20px;
-    padding: 5px 7px;
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2rem;
     transition: all 0.5s;
 }
 
-.login input[type=submit]:hover{
+.login input[type=submit]:hover {
     background-color: var(--md-sys-color-primary);
     border: 2px solid var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    border-radius: 20px;
-    padding: 5px 7px;
-    box-sizing: border-box;
-    outline: none;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 30px;
-    transition: all 0.5s;
 }
 
 /* All Cameras Page */
 
 main {
-    max-width: 90rem;
-    margin: 0 auto;    
+    max-width: min-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main h1 {
+    margin-left: 1rem;
+    text-align: left;
 }
 
 .camera-list {
-    max-width: 67.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .camera-list a {
-    border-radius: 20px;
-    background-color: var(--md-sys-color-primary);
-    color: white;
+    border-radius: 3vmin;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
     padding: 1rem;
     margin: 1rem;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
 .camera-list a:hover {
-    background-color: lightblue;
-    color: black;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
 }
 
 .camera-list img {
+    border-radius: 3vmin;
     max-width: 20rem;
     height: auto;
     margin-top: 0.5rem;
@@ -262,10 +262,12 @@ main {
 /* cameradetails page */
 .camera-details {
     background-color: var(--md-sys-color-primary);
-    color: white;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 10px;
+    color: var(--md-sys-color-on-primary);
+    padding: 1rem 4rem;
+    padding-bottom: 4rem;
+    margin: 2rem auto;
+    width: min-content;
+    border-radius: 3vmin;
 }
 
 .camera-details .grid-item {
@@ -273,31 +275,59 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-.camera-details div {
-    font-size: 1.2rem;
-    margin: 1rem;
+.camera-details div p {
+    text-align: left;
+    margin-bottom: 1.4rem;
+    margin-left: 3rem;
+    width: min-content;
+    white-space: nowrap;
+}
+
+.camera-details p {
+    text-align: center;
+}
+
+.camera-details p a {
+    color: var(--md-sys-color-on-primary);
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+
+.camera-details p a:hover {
+    color: var(--md-sys-color-error-container);
 }
 
 .camera-details img {
     max-width: 50rem;
     height: auto;
     margin: 1rem;
+    border-radius: 3vmin;
 }
 
 /* show watchlist page */
 
-.watchlist-item{
+main.watchlist {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+main.watchlist h2 {
+    margin-bottom: 0rem;
+}
+
+.watchlist-item {
     display: flex;
     background-color: var(--md-sys-color-primary);
-    color: white;
-    padding: 1rem;
+    color: var(--md-sys-color-on-primary);
+    padding: 1rem 2rem;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 3vmin;
 }
 
 .watchlist-item a {
     text-decoration: none;
-    color: white;
+    color: var(--md-sys-color-on-primary);
 }
 
 .watchlist-item img {
@@ -305,20 +335,49 @@ main {
     height: auto;
 }
 
-.watchlist-item .remove {
-    padding: 1rem;
-    margin: 2rem;
-    border-color: white;
-    border-radius: 30px;
-    border-style: solid;
-    height: 1rem;
+main:last-child form {
+    text-align: center;
 }
 
-.watchlist-item .remove:hover {
-    background-color: lightblue;
-    color: black;
-    font-weight: 500;
+main.watchlist form {
+    text-align: right;
+    margin-top: -2.8rem;
+    margin-bottom: 2rem;
 }
+
+main.watchlist form input {
+    margin-top: 0rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.5s;
+}
+
+.watchlist-item .remove {
+    margin-left: auto;
+    margin-right: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.5s;
+}
+
 
 .watchlist:last-child input {
     background-color: var(--md-sys-color-primary);
@@ -402,4 +461,34 @@ main .rental-item {
     margin: 1rem;
     padding: 2rem;
     border-radius: 20px;
+}
+
+main:last-child input {
+    margin-left: 1rem;
+    background-color: var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 3vmin;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 3rem;
+    transition: all 0.5s;
+}
+
+main:last-child input:hover,
+.watchlist-item .remove:hover,
+main.watchlist form input:hover {
+    background-color: var(--md-sys-color-error-container);
+    border: 2px solid var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+}
+
+/* about page */
+
+main.aboutpage {
+    max-width: fit-content;
+    text-align: left;
 }

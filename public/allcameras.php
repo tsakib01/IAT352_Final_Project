@@ -14,7 +14,7 @@
     require("../private/shared/public_header.php");
 
     echo "<main>";
-    echo "<h1>Camera List</h1>";
+    echo "<h1 class=\"display-medium\">Camera List</h1>";
 
     echo "<div class='camera-list'>";
     while ($row = $result->fetch_row()) {
