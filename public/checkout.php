@@ -62,10 +62,12 @@
         while($row = $result->fetch_row())
             $count++;
 
-        $isValid = $count >= 0 ? false : true;
+        $isValid = $count > 0 ? false : true;
 
-        echo "<p>The camera is not available in that date range.</p>"; 
-        echo "<p>Try a different date range or a different camera.</p>";
+        if(!$isValid){
+            echo "<p>The camera is not available in that date range.</p>"; 
+            echo "<p>Try a different date range or a different camera.</p>";
+        }
 
         $result->free_result();
     }
