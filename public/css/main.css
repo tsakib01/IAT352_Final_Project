@@ -495,3 +495,69 @@ main .rental-item {
     border-radius: 20px;
     width: 90rem;
 }
+
+/* Camera details filtering */
+
+.camera-list {
+    margin-top: 4rem;
+}
+
+.filter-sort {
+    position: absolute;
+    z-index: 1000;
+    text-align: left;
+    display: flex;
+    flex-flow: row;
+    margin-left: 1rem;
+}
+
+.filter{
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-item1-option span, .filter-item2-brand span, .filter-item3-year span,
+.filter-item4-storage span, .filter-item5-weight span ,.filter-item6-price span, .sort span {
+    padding: 1rem;
+    margin: 1rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    border-radius: 20px;
+}
+
+.filter-option, .filter-brand, .filter-year, .filter-storage, .filter-weight, .filter-price, .sort-items {
+    margin-left: 1rem;
+    padding: 1rem;
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    border-radius: 20px;
+}
+
+.sort {
+    text-align: end;
+}
+
+.filter-option li, .filter-brand li, .filter-year li, .filter-storage li, .filter-weight li, .filter-price li, .sort-items li {
+    padding: 0;
+    margin: 0;
+}
+
+#apply-filter-btn {
+    float: right;
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin-top: -1rem;
+    margin-right: 1rem;
+    font-weight: 700;
+    background-color: var(--md-sys-color-primary);
+    border: 2px solid var(--md-sys-color-primary-container);
+    color: white;
+    border-radius: 20px;
+}
+
+#apply-filter-btn:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}

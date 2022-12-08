@@ -39,7 +39,8 @@
         echo "<p class=\"title-large\"><strong>Storage: </strong> $storage GB</p>";
         echo "<p class=\"title-large\"><strong>Weight: </strong> $weight grams</p>";
         echo "<p class=\"title-large\"><strong>Dimensions: </strong>$dimensions mm</p>";
-        echo "<p class=\"title-large\"><strong>Price: </strong>$ $price</p>";
+        $price = round($price/30);
+        echo "<p class=\"title-large\"><strong>Price per day: </strong>$ $price</p>";
         
         echo "<p class=\"title-large\">";
         format_watchlist_action_link($code,"Check Out","checkout.php");

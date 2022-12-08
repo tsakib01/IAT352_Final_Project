@@ -54,12 +54,20 @@
     function format_model_name_as_link($id,$name,$page,$img,$price) {
         echo "<a href=\"$page?cid=$id\"> <h2>$name</h2>";
         echo "<img src=\"$img\" alt=\"Picture of the camera\" width='1302' height='868'>";
-        echo "<p>Price: $ $price</p>";
+        echo "<p>Price per day: $ $price</p>";
         echo "</a>";
     }
 
     // formats the watchlist items as a link
     function format_watchlist_action_link($id,$name,$page) {
         echo "<a class=\"remove\" href=\"$page?cid=$id\">$name</a>";
+    }
+
+    function addCheckboxOptionAsListWithFunction($name, $value, $function) {
+        echo "<li>$value<input type='checkbox' name='$name' value='$value' onchange='$function'></li>";
+    }
+
+    function addCheckboxOptionAsList($name, $value) {
+        echo "<li>$value<input type='checkbox' name='$name' value='$value'></li>";
     }
 ?>
