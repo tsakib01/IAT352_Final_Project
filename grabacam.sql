@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- 主机： 127.0.0.1
--- 生成日期： 2022-12-09 02:18:36
--- 服务器版本： 10.4.24-MariaDB
--- PHP 版本： 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2022 at 02:20 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `grabacam`
+-- Database: `grabacam`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `cameras`
+-- Table structure for table `cameras`
 --
 
 CREATE TABLE `cameras` (
@@ -45,7 +45,7 @@ CREATE TABLE `cameras` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `cameras`
+-- Dumping data for table `cameras`
 --
 
 INSERT INTO `cameras` (`cid`, `model`, `release_year`, `max_res`, `low_res`, `effective_pixels`, `zoom_wide`, `zoom_tele`, `normal_focus`, `macro_focus`, `storage`, `weight`, `dimensions`, `price`) VALUES
@@ -1092,7 +1092,7 @@ INSERT INTO `cameras` (`cid`, `model`, `release_year`, `max_res`, `low_res`, `ef
 -- --------------------------------------------------------
 
 --
--- 表的结构 `images`
+-- Table structure for table `images`
 --
 
 CREATE TABLE `images` (
@@ -1101,7 +1101,7 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `images`
+-- Dumping data for table `images`
 --
 
 INSERT INTO `images` (`cid`, `url`) VALUES
@@ -2147,7 +2147,7 @@ INSERT INTO `images` (`cid`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `rents`
+-- Table structure for table `rents`
 --
 
 CREATE TABLE `rents` (
@@ -2160,7 +2160,7 @@ CREATE TABLE `rents` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `reviews`
+-- Table structure for table `reviews`
 --
 
 CREATE TABLE `reviews` (
@@ -2173,7 +2173,7 @@ CREATE TABLE `reviews` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -2186,7 +2186,7 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `watchlist`
+-- Table structure for table `watchlist`
 --
 
 CREATE TABLE `watchlist` (
@@ -2195,85 +2195,85 @@ CREATE TABLE `watchlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转储表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 表的索引 `cameras`
+-- Indexes for table `cameras`
 --
 ALTER TABLE `cameras`
   ADD UNIQUE KEY `cid` (`cid`);
 
 --
--- 表的索引 `images`
+-- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`url`),
   ADD KEY `cid` (`cid`);
 
 --
--- 表的索引 `rents`
+-- Indexes for table `rents`
 --
 ALTER TABLE `rents`
   ADD PRIMARY KEY (`email`,`cid`,`fromDate`,`toDate`),
   ADD KEY `cid` (`cid`);
 
 --
--- 表的索引 `reviews`
+-- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`cid`,`email`,`date`),
   ADD KEY `email` (`email`);
 
 --
--- 表的索引 `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`email`);
 
 --
--- 表的索引 `watchlist`
+-- Indexes for table `watchlist`
 --
 ALTER TABLE `watchlist`
   ADD PRIMARY KEY (`email`,`cid`),
   ADD KEY `cid` (`cid`);
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用表AUTO_INCREMENT `cameras`
+-- AUTO_INCREMENT for table `cameras`
 --
 ALTER TABLE `cameras`
   MODIFY `cid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1039;
 
 --
--- 限制导出的表
+-- Constraints for dumped tables
 --
 
 --
--- 限制表 `images`
+-- Constraints for table `images`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `cameras` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- 限制表 `rents`
+-- Constraints for table `rents`
 --
 ALTER TABLE `rents`
   ADD CONSTRAINT `rents_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `cameras` (`cid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `rents_ibfk_2` FOREIGN KEY (`email`) REFERENCES `users` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- 限制表 `reviews`
+-- Constraints for table `reviews`
 --
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `cameras` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`email`) REFERENCES `users` (`email`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- 限制表 `watchlist`
+-- Constraints for table `watchlist`
 --
 ALTER TABLE `watchlist`
   ADD CONSTRAINT `watchlist_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `cameras` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE,
