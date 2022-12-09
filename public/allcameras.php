@@ -126,10 +126,7 @@
 
     echo "<div class= 'camera-list'>";
     while ($row = $result->fetch_row()) {
-        format_model_name_as_link($row[0], $row[1],"cameradetails.php","./images/agfaEphoto1280.PNG",round($row[13]/30))
-    // while ($row = $result->fetch_assoc()) {
-    //     format_model_name_as_link($row['cid'], $row['model'],"cameradetails.php",$row['url'],round($row['price']/30));
-
+        format_model_name_as_link($row[0], $row[1],"cameradetails.php",$row[14],round($row[13]/10));
     };
 
     echo "</div>";

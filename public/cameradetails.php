@@ -38,7 +38,7 @@
         echo "<p class=\"title-large\"><strong>Storage: </strong> $storage GB</p>";
         echo "<p class=\"title-large\"><strong>Weight: </strong> $weight grams</p>";
         echo "<p class=\"title-large\"><strong>Dimensions: </strong>$dimensions mm</p>";
-        $price = round($price/30);
+        $price = round($price/10);
         echo "<p class=\"title-large\"><strong>Price per day: </strong>$ $price</p>";
         
         echo "<p class=\"title-large\">";

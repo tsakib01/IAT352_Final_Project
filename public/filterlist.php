@@ -1,7 +1,7 @@
 <?php
     require_once('../private/database.php');
 
-    $selectQuery = "Select cid, model, price FROM cameras ";
+    $selectQuery = "Select cid, model, price, url FROM cameras JOIN images USING(cid) ";
 
     // adding brand filters in array
     $brands = array();
@@ -145,7 +145,7 @@
 
     $stmt = $db->prepare($selectQuery);
     $stmt->execute();
-    $stmt->bind_result($cid,$model,$price);
+    $stmt->bind_result($cid,$model,$price,$url);
 
     $filteredResult = array();
 
@@ -153,7 +153,8 @@
         $filteredResult[] = array(
                           "cid" => $cid,
                           "model" => $model, 
-                          "price" => $price);
+                          "price" => $price,
+                          "url" => $url);
         // echo "Model:$model, Price:$price";
         // echo "<br>";
     }

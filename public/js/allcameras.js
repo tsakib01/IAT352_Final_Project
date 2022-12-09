@@ -1,19 +1,3 @@
-// $(document).ready(function() {
-//     $(".filter-item1").on('mouseover', 'option', function(e) {
-//         $(".filter-item1-option").css("display", "none");
-//     })
-
-//     $(".filter-item1").on('mouseout', 'option', function(e) {
-//         $(".filter-item1-option").css("display", "block");
-//     })
-// });
-
-// $(".filter-item1-option").css("display", "none");
-
-// $(".filter-item1").hover(function() {
-//     $(".filter-item1-option").css("display", "block")
-// })
-
 //------------------------------------- FILTERING OPTIONS-------------------------------------------------------
 $(".filter-option").css("display", "none");
 
@@ -171,10 +155,10 @@ $(document).ready(function(){
 
             result.forEach(element => {
                 $(".camera-list .camera-list").append(`
-                    <a href="$page?cid=${element.cid}">
+                    <a href="../public/cameradetails.php?cid=${element.cid}">
                     <h2>${element.model}</h2>
-                    <img src="./images/agfaEphoto1280.PNG" alt="Picture of the camera" width='1302' height='868'>
-                    <p>Price per day: $ ${element.price}</p>
+                    <img src="${element.url}" alt="Picture of the camera" width='1302' height='868'>
+                    <p>Price per day: $ ${Math.round(element.price/10)}</p>
                     </a>
                 `)
             })
@@ -184,28 +168,6 @@ $(document).ready(function(){
             console.log(msg);
         });
     });
-
-    // $(".apply-filter-btn").click(function(event){
-    //     var request = $.ajax({
-    //         url: "../public/filterlist.php",
-    //         method: "post",
-    //         data: {api_endpoint_name: "get_filtered_list"}
-    //     })
-
-    //     request.done(function(data){
-    //         console.log(data);
-    //         var result = JSON.parse(data);
-
-    //         result.forEach(element => {
-    //             $(".product-list").append(`
-    //             <li>
-    //                 ${element.name}, ${element.retail_price}, ${element.description}, ${element.in_stock}, ${element.photo_src}
-    //             </li>
-    //             `)
-    //         })
-    //     })
-    // });
-
 })
 
 

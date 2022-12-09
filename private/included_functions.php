@@ -53,7 +53,7 @@
     // formats the name of the model as a link
     function format_model_name_as_link($id,$name,$page,$img,$price) {
         echo "<a href=\"$page?cid=$id\"> <h2>$name</h2>";
-        echo "<img src=\"$img\" alt=\"Picture of the camera\" width='1302' height='868'>";
+        echo "<img src=\"$img\" alt=\"Picture of the camera\" loading='lazy' width='1302' height='868'>";
         echo "<p>Price per day: $ $price</p>";
         echo "</a>";
     }
