@@ -14,14 +14,13 @@
     @$msg = trim($_GET['message']); // gets the message passed with link if not a error suppression is used to prevent throwing an error
 
     // gets all the attributes of the product using productCode
-    $selectQuery = "SELECT * 
-                    FROM cameras 
+    $selectQuery = "SELECT * FROM cameras JOIN images USING(cid)
                     WHERE cid = ?";
 
     $stmt = $db->prepare($selectQuery);
     $stmt->bind_param('d', $code);
     $stmt->execute();
-    $stmt->bind_result($cid, $model, $release_year, $max_res, $low_res, $effective_pixels, $zoom_wide, $zoom_tele, $normal_focus, $macro_focus, $storage, $weight, $dimensions, $price);
+    $stmt->bind_result($cid, $model, $release_year, $max_res, $low_res, $effective_pixels, $zoom_wide, $zoom_tele, $normal_focus, $macro_focus, $storage, $weight, $dimensions, $price,$url);
 
     require('../private/shared/public_header.php');
 
@@ -31,7 +30,7 @@
     if ($stmt->fetch()) {
         echo "<h1 class=\"display-medium\">$model</h1>\n";
         echo "<div class='grid-item'>";
-        echo "<img src='./images/agfaEphoto1280.png' alt=\"Picture of the camera\" width='1302' height='868'>";
+        echo "<img src='$url' alt=\"Picture of the camera\" width='1302' height='868'>";
 
         echo "<div>";
         echo "<p class=\"title-large\"><strong>Released Year: </strong> <br> $release_year</p>";

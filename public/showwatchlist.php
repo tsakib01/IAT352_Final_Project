@@ -16,9 +16,9 @@
 
     $email = $_SESSION['valid_user'];
 
-    $selectQuery = "SELECT C.cid, C.model, C.price ";
-    $selectQuery .= "FROM cameras C INNER JOIN watchlist W ON C.cid = W.cid ";
-    $selectQuery .= "WHERE W.email='$email'";
+    $selectQuery = "SELECT cid, model, price, url ";
+    $selectQuery .= "FROM cameras JOIN images USING(cid) INNER JOIN watchlist USING(cid) ";
+    $selectQuery .= "WHERE email='$email'";
     $result = $db->query($selectQuery);
 
     include_once('../private/shared/public_header.php');
@@ -75,14 +75,14 @@
 
     // items that are in the watchlist are display as link to details page
     // if edit session is found then the remove option will be display beside each item
-    while ($row = $result->fetch_row()) {
+    while ($row = $result->fetch_assoc()) {
 
         echo "<div class='watchlist-item'>";
-        format_model_name_as_link($row[0], $row[1],"cameradetails.php","./images/agfaEphoto1280.PNG",$row[2]);
+        format_model_name_as_link($row['cid'], $row['model'],"cameradetails.php",$row['url'],$row['price']);
         if(isset($_SESSION['edit'])){
-            format_watchlist_action_link($row[0],"Remove from Watchlist","removefromwatchlist.php");
+            format_watchlist_action_link($row['cid'],"Remove from Watchlist","removefromwatchlist.php");
         }
-        format_watchlist_action_link($row[0],"Check Out","checkout.php");
+        format_watchlist_action_link($row['cid'],"Check Out","checkout.php");
         echo "</div>";
     };
 
