@@ -147,3 +147,65 @@ $(".sort").on('mouseover', function(e) {
 })
 
 
+$(document).ready(function(){
+
+    $(".apply-filter-form").submit(function(event){
+        event.preventDefault();
+        var data = $(this).serializeArray();
+        data.push({name: "api_endpoint_name", value: "filter_list"});
+
+        // console.log("data, data");
+
+        //write an AJAX request to send the data to the server (adminApi.php)
+        var request = $.ajax({
+            url: "../public/filterlist.php",
+            method: "post",
+            data: data
+        })
+
+        request.done(function(data){
+            console.log(data);
+            var result = JSON.parse(data);
+            
+            $(".camera-list .camera-list").html("");
+
+            result.forEach(element => {
+                $(".camera-list .camera-list").append(`
+                    <a href="$page?cid=${element.cid}">
+                    <h2>${element.model}</h2>
+                    <img src="./images/agfaEphoto1280.PNG" alt="Picture of the camera" width='1302' height='868'>
+                    <p>Price per day: $ ${element.price}</p>
+                    </a>
+                `)
+            })
+        })
+    
+        request.fail(function(msg){
+            console.log(msg);
+        });
+    });
+
+    // $(".apply-filter-btn").click(function(event){
+    //     var request = $.ajax({
+    //         url: "../public/filterlist.php",
+    //         method: "post",
+    //         data: {api_endpoint_name: "get_filtered_list"}
+    //     })
+
+    //     request.done(function(data){
+    //         console.log(data);
+    //         var result = JSON.parse(data);
+
+    //         result.forEach(element => {
+    //             $(".product-list").append(`
+    //             <li>
+    //                 ${element.name}, ${element.retail_price}, ${element.description}, ${element.in_stock}, ${element.photo_src}
+    //             </li>
+    //             `)
+    //         })
+    //     })
+    // });
+
+})
+
+

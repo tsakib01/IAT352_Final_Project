@@ -509,6 +509,7 @@ main .rental-item {
     display: flex;
     flex-flow: row;
     margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .filter{

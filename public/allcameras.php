@@ -13,10 +13,12 @@
 
     require("../private/shared/public_header.php");
 
+    // require("../public/filterlist.php");
+
     echo "<main>";
     echo "<h1 class=\"display-medium\">Camera List</h1>";
     //------------------FILTERING STARTS HERE-----------------------------------------------------------------------------
-    echo "<form class='apply-filter'>";
+    echo "<form class='apply-filter-form'>";
         echo "<div class='filter-sort'>";
             echo "<div class='filter'>";
                 //select option to filter
@@ -111,19 +113,22 @@
                     addCheckboxOptionAsList('sort2', 'year');
                     addCheckboxOptionAsList('sort3', 'storage');
                     addCheckboxOptionAsList('sort4', 'weight');
-                    addCheckboxOptionAsList('sort4', 'price');
+                    addCheckboxOptionAsList('sort5', 'price');
                 echo "</ul>";
             echo "</div>";
         echo "</div>";
+        echo "<input id='apply-filter-btn' type='submit' value='Apply'/>";
     echo "</form>";
-    echo "<button id='apply-filter-btn' type='submit'>Apply</button>";
+    
     //------------------FILTERING ENDS HERE-----------------------------------------------------------------------------
 
     echo "<div class='camera-list'>";
+    echo "<div class= 'camera-list'>";
     while ($row = $result->fetch_row()) {
         format_model_name_as_link($row[0], $row[1],"cameradetails.php","./images/agfaEphoto1280.PNG",round($row[13]/30));
     };
 
+    echo "</div>";
     echo "</div>";
     echo "</main>";
 

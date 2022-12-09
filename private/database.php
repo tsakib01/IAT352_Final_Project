@@ -1,5 +1,6 @@
-<!-- Database related functions goes here -->
+
 <?php
+    //Database related functions goes here
     require_once('database_credentials.php');
 
     // returns connection to the database if credentials are correct otherwise displays an error
