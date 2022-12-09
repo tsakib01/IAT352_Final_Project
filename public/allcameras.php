@@ -123,14 +123,13 @@
     //------------------FILTERING ENDS HERE-----------------------------------------------------------------------------
 
     echo "<div class='camera-list'>";
-<<<<<<< HEAD
+
     echo "<div class= 'camera-list'>";
     while ($row = $result->fetch_row()) {
-        format_model_name_as_link($row[0], $row[1],"cameradetails.php","./images/agfaEphoto1280.PNG",round($row[13]/30));
-=======
-    while ($row = $result->fetch_assoc()) {
-        format_model_name_as_link($row['cid'], $row['model'],"cameradetails.php",$row['url'],round($row['price']/30));
->>>>>>> 4d84e3fa81662e083352551258a0a47aa26f60a5
+        format_model_name_as_link($row[0], $row[1],"cameradetails.php","./images/agfaEphoto1280.PNG",round($row[13]/30))
+    // while ($row = $result->fetch_assoc()) {
+    //     format_model_name_as_link($row['cid'], $row['model'],"cameradetails.php",$row['url'],round($row['price']/30));
+
     };
 
     echo "</div>";
