@@ -4,6 +4,9 @@ include('../private/included_functions.php');
 require_once("../private/database.php");
 require_SSL();
 
+$selectQuery = "SELECT email FROM users";
+$result = $db->query($selectQuery);
+
 if (isset($_POST['submit'])) {
     if (!empty($_POST["fname"])) {
         $fname = trim($_POST["fname"]);
@@ -31,7 +34,16 @@ if (isset($_POST['submit'])) {
         $password2 = "";
     }
 
-    if ($password != $password2) {
+    while ($row = $result->fetch_row()){
+        if($email == $row[0]){
+            $repeat = 1;
+        } else{
+            $repeat = 0;
+        }
+    };
+    if($repeat == 1){
+        $message = "This email has been registered.";
+    } else if ($password != $password2) {
         $message = "Your entered passwords do not match.";
     } else if (!$fname || !$lname || !$email || !$password) {
         $message = "Missing information.";
@@ -74,5 +86,6 @@ require_once('../private/shared/public_header.php');
 
 <?php
 require_once('../private/shared/public_footer.php');
+$result->free_result();
 mysqli_close($db);
 ?>
