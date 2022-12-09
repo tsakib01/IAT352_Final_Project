@@ -441,6 +441,13 @@ main.watchlist form input {
 
 
 /* About page */
+
+main.aboutpage {
+    max-width: 90rem;
+    text-align: left;
+    margin: 2rem auto;
+}
+
 .about section {
     background-color: var(--md-sys-color-primary);
     color: white;
@@ -477,14 +484,6 @@ main.watchlist form input:hover {
     color: var(--md-sys-color-on-error-container);
 }
 
-/* about page */
-
-main.aboutpage {
-    max-width: 90rem;
-    text-align: left;
-    margin: 2rem auto;
-}
-
 
 /* Rentals page */
 main .rental-item {
@@ -499,7 +498,7 @@ main .rental-item {
 /* Camera details filtering */
 
 .camera-list {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
 }
 
 .filter-sort {
@@ -552,12 +551,14 @@ main .rental-item {
     margin-right: 1rem;
     font-weight: 700;
     background-color: var(--md-sys-color-primary);
-    border: 2px solid var(--md-sys-color-primary-container);
+    border: 2px solid var(--md-sys-color-primary);
     color: white;
     border-radius: 20px;
+    transition: 0.3s;
 }
 
 #apply-filter-btn:hover {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
+    border: 2px solid var(--md-sys-color-primary-container);
 }
