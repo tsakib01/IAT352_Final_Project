@@ -1,5 +1,5 @@
-<!-- Allow users to register using a form with inputs for email, fname, lname, password, confirm password   -->
 <?php
+// <!-- Allow users to register using a form with inputs for email, fname, lname, password, confirm password   -->
 include('../private/included_functions.php');
 require_once("../private/database.php");
 require_SSL();
@@ -7,6 +7,7 @@ require_SSL();
 $selectQuery = "SELECT email FROM users";
 $result = $db->query($selectQuery);
 
+// validates all inputs after user submits the information
 if (isset($_POST['submit'])) {
     if (!empty($_POST["fname"])) {
         $fname = trim($_POST["fname"]);
@@ -34,6 +35,9 @@ if (isset($_POST['submit'])) {
         $password2 = "";
     }
 
+    // checks if the user already exists by email 
+    // if adds the user to the database and redirects to login.php page
+    // if not then shows an appropriate based on the inputs submitted
     while ($row = $result->fetch_row()){
         if($email == $row[0]){
             $repeat = 1;
@@ -71,15 +75,15 @@ require_once('../private/shared/public_header.php');
 <form class="signup" action="signup.php" method="post">
     <h1 class="display-large">Sign Up</h1>
     <?php if (!empty($message)) echo "<p class=\"title-medium\">" . $message . '</p>' ?>
-    <input class="title-medium" name="fname" type="text" placeholder="Please Enter Your First Name" value="<?php $fname ?>">
+    <input class="title-medium" name="fname" type="text" placeholder="Please Enter Your First Name" value="<?php $fname ?>" required>
     <br />
-    <input class="title-medium" type="text" name="lname" placeholder="Please Enter Your Last Name" value="<?php $lname ?>">
+    <input class="title-medium" type="text" name="lname" placeholder="Please Enter Your Last Name" value="<?php $lname ?>" required>
     <br />
-    <input class="title-medium" type="email" name="email" placeholder="Please Enter Your Email Adress" value="<?php $email ?>">
+    <input class="title-medium" type="email" name="email" placeholder="Please Enter Your Email Adress" value="<?php $email ?>" required>
     <br />
-    <input class="title-medium" type="password" name="password" placeholder="Please Enter Your Password" value="">
+    <input class="title-medium" type="password" name="password" placeholder="Please Enter Your Password" value="" required>
     <br />
-    <input class="title-medium" type="password" name="password2" placeholder="Double Confirm Your Password" value="">
+    <input class="title-medium" type="password" name="password2" placeholder="Double Confirm Your Password" value="" required>
     <br />
     <input class="title-large" type="submit" name="submit" value="Register">
 </form>

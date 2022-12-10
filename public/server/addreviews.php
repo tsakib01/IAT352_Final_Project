@@ -9,6 +9,9 @@
     $message ="";
 
 
+    // if user tries adding a review,
+    // a check is made before adding the review in the database for the current product
+    // and a message is set depending on the success and failure
     if(isset($_POST['add-review'])){
         try{
             $insertQuery = "INSERT INTO reviews(cid,email,date, comments) VALUES(?,?,?,?)";
@@ -23,6 +26,8 @@
         }
     }
 
+    // retrieves all the reviews of the current product based on cid
+    // and the items are returned in json for display in cameradetails.php page
     $selectQuery = "SELECT email, date, comments FROM reviews WHERE cid=? ORDER BY date DESC";
     $stmt = $db->prepare($selectQuery);
     $stmt->bind_param('d', $cid);

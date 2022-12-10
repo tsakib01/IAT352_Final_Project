@@ -1,10 +1,10 @@
-<!-- Allow users to login using a form with inputs for email and password   -->
-
 <?php
+// <!-- Allow users to login using a form with inputs for email and password   -->
 include('../private/included_functions.php');
 require_once("../private/database.php");
 require_SSL();
 
+// valid inputs are checked and the current user is verified from the database before allowing into the website
 if (!isset($_POST["submit"])) {
     $email = $password = "";
 } else {
@@ -19,12 +19,15 @@ if (!isset($_POST["submit"])) {
         $password = "";
     }
 
+    // verifies user from the database
     $query = "SELECT password FROM users WHERE email = \"$email\"";
     $result = mysqli_query($db, $query);
     while ($row = mysqli_fetch_assoc($result)) {
         $pass_hash = $row["password"];
     }
     if (!empty($pass_hash) && password_verify($password, $pass_hash)) {
+        // if verified, a session is created using the user's email
+        // and the user will be redirected to the page from where he was originally redirected from
         session_start();
         $_SESSION['valid_user'] = $email;
         $callback_url = "index.php";
@@ -33,6 +36,7 @@ if (!isset($_POST["submit"])) {
         }
         redirect_to($callback_url);
     } else {
+        // if failed a message is displayed
         $message = "Sorry, email and password combination not registered.";
     }
 }

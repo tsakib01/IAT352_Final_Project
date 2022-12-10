@@ -4,17 +4,11 @@
     require_once("../private/included_functions.php");
     no_SSL();
 
-        if(isset($_SESSION['remove']))
-            unset($_SESSION['remove']);
-        
-        if(isset($_SESSION['edit']))
-            unset($_SESSION['edit']);
-
     $code = "";
     if(isset($_GET['cid'])) $code = trim($_GET['cid']); // gets the camera Id from redirected link
     @$msg = trim($_GET['message']); // gets the message passed with link if not a error suppression is used to prevent throwing an error
 
-    // gets all the attributes of the product using productCode
+    // gets all the attributes of the camera using cid
     $selectQuery = "SELECT * FROM cameras JOIN images USING(cid)
                     WHERE cid = ?";
 
@@ -27,7 +21,7 @@
 
     echo "<main class='camera-details'>";
 
-    // displays all the details of the product in different paragraphs
+    // displays all the details of the camera in different paragraphs
     if ($stmt->fetch()) {
         echo "<h1 class=\"display-medium\">$model</h1>\n";
         echo "<div class='grid-item'>";
@@ -53,7 +47,7 @@
 
     $stmt->free_result();
 
-    // if the product is not in the watch list then a  Add to Watchlist button will be shown
+    // if the product is not in the watchlist then a  Add to Watchlist button will be shown
     if (is_logged_in() && !is_in_watchlist($code)) {
         echo "<form class='add-to-watchlist-form'>\n";
         echo "<input type=\"hidden\" name=\"cid\" value=$code>\n";
@@ -82,13 +76,14 @@
     // displays a message based on successfully adding a review
     echo "<div class='message' style='color:yellow'></div>";
 
-    // fetches reviews from the database and shows all available reviews from different users below the page based on the product
+    // fetches reviews from the database and shows all available reviews from different users below the page based on the rentals of the user
     $selectQuery = "SELECT email, date, comments FROM reviews WHERE cid=? ORDER BY date DESC";
     $stmt = $db->prepare($selectQuery);
     $stmt->bind_param('d', $code);
     $stmt->execute();
     $stmt->bind_result($email,$date,$comments);
 
+    // displays all the comments available for the current product from different users retrieved from the database
     echo "<div class='comments-area'>";
     if ($stmt->fetch()) {
         echo "<div class='comments'>";

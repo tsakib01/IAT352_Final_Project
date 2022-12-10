@@ -51,7 +51,7 @@ $(document).ready(function(){
 
         console.log("data", data);
 
-        //write an AJAX request to send the data to the server (addreviews.php)
+        //write an AJAX request to send the data to the server (addtowatchlist.php)
         var request = $.ajax({
             url: "../public/server/addtowatchlist.php",
             method: "post",

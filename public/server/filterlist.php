@@ -3,7 +3,7 @@
 
     $selectQuery = "Select cid, model, price, url FROM cameras JOIN images USING(cid) ";
 
-    // adding brand filters in array
+    // adds brand filters in array
     $brands = array();
     if(isset($_POST['brand'])){
         for($i = 1; $i <= 19; $i++){
@@ -13,7 +13,7 @@
         }
     }
 
-    // adding year filters in array
+    // adds year filters in array
     $years = array();
     if(isset($_POST['year'])){
         for($i = 1; $i <= 4; $i++){
@@ -24,7 +24,7 @@
         }
     }
 
-    // adding storage filters in array
+    // adds storage filters in array
     $storages = array();
     if(isset($_POST['storage'])){
         for($i = 1; $i <= 4; $i++){
@@ -35,7 +35,7 @@
         }
     }
 
-    // adding weight filters in array
+    // adds weight filters in array
     $weights = array();
     if(isset($_POST['weight'])){
         for($i = 1; $i <= 4; $i++){
@@ -46,7 +46,7 @@
         }
     }
 
-    // adding price filters in array
+    // adds price filters in array
     $prices = array();
     if(isset($_POST['price'])){
         for($i = 1; $i <= 4; $i++){
@@ -67,14 +67,14 @@
     
 
 
-    // checking if any selection is made
+    // checks if any selection is made
     if (sizeof($brands) > 0 || sizeof($years) > 0 || sizeof($storages) > 0 
         || sizeof($weights) > 0 || sizeof($prices) > 0)
         $selectQuery .= "WHERE ";
 
 
     $entryCount = 0;
-    // appending brands to sql
+    // appends brands to sql
     if(sizeof($brands) > 0) {
         $entryCount++;
         for ($i = 0 ; $i < sizeof($brands); $i++){
@@ -85,7 +85,7 @@
         }
     }
 
-    // appending years to sql
+    // appends years to sql
     if(sizeof($years) > 0) {
         $selectQuery .= $entryCount > 0 ? " AND" : "";
         $entryCount++;
@@ -97,7 +97,7 @@
         }
     }
 
-    // appending storages to sql
+    // appends storages to sql
     if(sizeof($storages) > 0) {
         $selectQuery .= $entryCount > 0 ? " AND" : "";
         $entryCount++;
@@ -109,7 +109,7 @@
         }
     }
 
-    // appending weights to sql
+    // appends weights to sql
     if(sizeof($weights) > 0) {
         $selectQuery .= $entryCount > 0 ? " AND" : "";
         $entryCount++;
@@ -121,7 +121,7 @@
         }
     }
 
-    // appending prices to sql
+    // appends prices to sql
     if(sizeof($prices) > 0) {
         $selectQuery .= $entryCount > 0 ? " AND" : "";
         for ($i = 0 ; $i < sizeof($prices); $i++){
@@ -132,6 +132,7 @@
         }
     }
 
+    // appends sorting options to sql
     if(sizeof($sortItems) > 0) {
         $selectQuery .= " ORDER BY";
         for ($i = 0 ; $i < sizeof($sortItems); $i++)
@@ -141,12 +142,14 @@
                 $selectQuery .= " $sortItems[$i],";
     }
 
-    // echo $selectQuery;
 
+
+    // retrives the items based on filter and sort options chosen by the user
     $stmt = $db->prepare($selectQuery);
     $stmt->execute();
     $stmt->bind_result($cid,$model,$price,$url);
 
+    // array for holding the to be returned items
     $filteredResult = array();
 
     while($stmt->fetch()) {
@@ -155,10 +158,9 @@
                           "model" => $model, 
                           "price" => $price,
                           "url" => $url);
-        // echo "Model:$model, Price:$price";
-        // echo "<br>";
     }
 
+    // return results in json format
     echo json_encode($filteredResult);
 
     

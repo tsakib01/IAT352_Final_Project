@@ -18,6 +18,8 @@
     $selectQuery .= "WHERE email='$email'";
     $result = $db->query($selectQuery);
 
+    // if changes are made and applied
+    // then input validation is made before the changes are stored in the database
     if (isset($_POST['submit'])) {
         if (!empty($_POST["password"])) {
             $password = trim($_POST["password"]);
@@ -51,8 +53,7 @@
 
     include_once('../private/shared/public_header.php');
 
-    // items that are in the watchlist are display as link to details page
-    // if edit session is found then the remove option will be display beside each item
+    // fetches the last name and first name from database and display them
     while ($row = $result->fetch_assoc()) {
 
         $lname = $row['lname'];
@@ -71,7 +72,7 @@
     echo '<section class="changepassbtn">';
 
     // checks if edit option is submitted
-    // if not then edit button will be display
+    // if not then edit button will be displayed
     if(!isset($_POST['edit'])){
         echo "<form action='user.php' method='post'>";
         echo "<input class='title-meidum' type='submit' name='edit' value='Edit Password'>";
@@ -79,6 +80,7 @@
     }
     echo '</section></section>';
 
+    // if edit option is selected then the option to apply the changes is shown
     if(isset($_POST['edit'])){
         echo '<form class="pw" action="user.php" method="post">
         <input class="body-large" type="password" name="password" placeholder="Please Enter Your New Password" value="">

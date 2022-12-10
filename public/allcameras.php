@@ -7,16 +7,16 @@
 
     no_SSL(); // switches to http
 
+    // retrieves camera data and images from the database by building a string query first
     $selectQuery = "SELECT * FROM cameras JOIN images USING(cid)";
     $result = $db->query($selectQuery);
 
 
     require("../private/shared/public_header.php");
 
-    // require("../public/filterlist.php");
-
     echo "<main class='allcameras'>";
     echo "<h1 class=\"display-medium\">Camera List</h1>";
+
     //------------------FILTERING STARTS HERE-----------------------------------------------------------------------------
     echo "<form class='apply-filter-form'>";
         echo "<div class='filter-sort'>";
@@ -106,6 +106,7 @@
                 
             echo "</div>";
 
+            // shows options to sort by
             echo "<div class='sort'>";
                 echo "<span>Sort by:</span>";
                 echo "<ul class='sort-items' style='list-style-type:none; display:none'>";
@@ -124,6 +125,7 @@
 
     echo "<div class='camera-list'>";
 
+    // displays the camera data as a link retrieved from the database
     echo "<div class= 'camera-list'>";
     while ($row = $result->fetch_row()) {
         format_model_name_as_link($row[0], $row[1],"cameradetails.php",$row[14],round($row[13]/10));

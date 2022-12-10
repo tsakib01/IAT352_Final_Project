@@ -1,5 +1,3 @@
-<!-- INDEX PAGE  -->
-<!-- CHECK header.php and footer.php IN PRIVATE/SHARED DIRECTORY -->
 <?php
     require_once("../private/included_functions.php");
     require_once("../private/database.php");
@@ -7,6 +5,8 @@
     no_SSL(); // switches to http
     session_start();
 
+    // determines popularity by selecting cameras from the rentals made by the users based on the number of times it was rented
+    // atmost three product are display from the items returned from the database
     $popularQuery = "SELECT * FROM cameras 
                     JOIN images USING(cid) 
                     JOIN(SELECT cid, COUNT(*) AS count FROM `rents` GROUP BY cid) AS totalRent 
@@ -27,6 +27,7 @@
     echo "</div>";
     echo "</section>";
 
+    // retrieves last three cameras added in the database and atmost three are displayed
     $lastAddedQuery = "SELECT * FROM cameras JOIN images USING(cid) ORDER BY cid DESC LIMIT 3";
     $lastAddedResult = $db->query($lastAddedQuery);
 
@@ -41,6 +42,10 @@
     echo "</section>";
     echo "</div>";
 
+
+    // this is only shown based on the activity of the user
+    // if there are enough items rented by the users 
+    // then the items that the current never rented will be displayed
     if(is_logged_in()){
     $email = $_SESSION['valid_user'];
     $likeQuery = "SELECT * FROM cameras 

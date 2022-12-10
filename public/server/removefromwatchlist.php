@@ -2,8 +2,8 @@
     session_start();
     require_once("../private/database.php");
 
-    // if the user is logged in and a product is passed for removing
-	// then the product is deleted from the database using email and productCode
+    // if the user is logged in and a camera id is passed for removing
+	// then the camera is deleted from the database using email and camera id
 	$cid = "";
 
 	if (!empty($_POST['cid']) && !empty($_SESSION['valid_user'])) {

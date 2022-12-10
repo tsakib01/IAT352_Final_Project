@@ -1,10 +1,9 @@
 <?php
-    // Uses this page cameras to a watchlist 
-    // only shown in the modeldetails.php page when added to the watchlist
     session_start();
     require_once("../private/database.php");
     require_once("../private/included_functions.php");
     no_SSL();
+
 
     if(isset($_POST['add-to-watchlist']))
     {
@@ -21,15 +20,19 @@
             $insertQuery = "INSERT INTO watchlist (email, cid) 
                       VALUES (?,?)";
             
+            // retrievs the items from the watchlist from database based on cid
             $stmt = $db->prepare($insertQuery);
             $stmt->bind_param('sd',$email,$cid);
             $stmt->execute();
-                    
-            $message = "The model has been added to your <a href=\"showwatchlist.php\">watchlist</a>.";
+             
+            // a message shown after successfully adding to the watchlist
+            $message = "The camera has been added to your <a href=\"showwatchlist.php\">watchlist</a>.";
         }
 
 
         $result = array("message" => $message);
+
+        // message is returned in json
         echo json_encode($result);
     }
 

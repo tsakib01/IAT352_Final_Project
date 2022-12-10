@@ -9,6 +9,8 @@
 
     echo "<main>";
 
+    // a valid session check is made before 
+    // selecting model, from and to date from the database and displaying in the Rentals page
     if(isset($_SESSION['valid_user'])){
         $email = $_SESSION['valid_user'];
         $selectQuery = "SELECT cameras.model, rents.fromDate, rents.toDate 
@@ -28,6 +30,7 @@
         }
     }
     else {
+        // if a valid session is not found redirects to login page
         $_SESSION['callback_url'] = 'rentals.php';
         redirect_to('login.php');
     }

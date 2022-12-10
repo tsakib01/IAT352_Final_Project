@@ -26,6 +26,8 @@
         <h2 class="display-medium">FAQs</h2>
         <p class="headline-medium">Q. What if I lost or broke the camera?</p>
         <p class="headline-medium">A. You can have a buy a insurance while checking out to prevent getting charged for the camera. Or you can email the support to make an arrangement.</p>
+        <p class="headline-medium">Q. What if I can't return on time?</p>
+        <p class="headline-medium">A. You will be charged using the per day rate till you return the product.</p>
     </section>
 </main>
 

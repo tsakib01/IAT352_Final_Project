@@ -19,7 +19,8 @@
     $to = "";
 
 
-
+    // a check is made to ensure if checkout option was clicked  
+    // then assigns the variables email, cid, from and to based on the submission
     if (isset($_POST['checkout'])){
         $email = $_SESSION['valid_user'];
         $cid = $_POST['cid'];
