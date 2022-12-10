@@ -304,6 +304,7 @@ main h1 {
     border-radius: 3vmin;
 }
 
+
 /* show watchlist page */
 
 main.watchlist {
@@ -563,3 +564,53 @@ main .rental-item {
     color: var(--md-sys-color-on-primary-container);
     border: 2px solid var(--md-sys-color-primary-container);
 }
+
+
+/* camera details page */
+.add-review-form textarea {
+    margin-left: 1rem;
+    display: flex;
+    align-self: flex-start;
+
+}
+.add-review-form h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 1rem;
+    text-align: left;
+}
+
+#add-review {
+    margin: 1rem;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.comments {
+    margin-top: 4rem;
+}
+
+.comments h3 {
+    font-weight: 300;
+    text-align: left;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.camera-details .remove {
+    display: flex;
+    align-self: flex-end;
+    padding: 1rem;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.camera-details .remove:hover {
+    background-color: #ffdad6;
+}
+
+
+

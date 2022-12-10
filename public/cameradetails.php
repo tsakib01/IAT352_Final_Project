@@ -10,7 +10,8 @@
         if(isset($_SESSION['edit']))
             unset($_SESSION['edit']);
 
-    $code = trim($_GET['cid']); // gets the camera Id from redirected link
+    $code = "";
+    if(isset($_GET['cid'])) $code = trim($_GET['cid']); // gets the camera Id from redirected link
     @$msg = trim($_GET['message']); // gets the message passed with link if not a error suppression is used to prevent throwing an error
 
     // gets all the attributes of the product using productCode
@@ -42,7 +43,8 @@
         echo "<p class=\"title-large\"><strong>Price per day: </strong>$ $price</p>";
         
         echo "<p class=\"title-large\">";
-        format_watchlist_action_link($code,"Check Out","checkout.php");
+        if(is_logged_in())
+            format_watchlist_action_link($code,"Check Out","checkout.php");
         echo "</p>";
 
         echo "</div>";
@@ -64,11 +66,39 @@
         echo "<p class='title-large'>This model is already in your <a href=\"showwatchlist.php\">watchlist</a>.<p>";
     }
 
+    echo "<div class='message'></div>";
 
+    if(is_logged_in()){
+        echo "<form class='add-review-form'>";
+        echo "<h2>Reviews</h2>";
+        echo "<textarea type='text' name='review' rows='10' cols='100' ></textarea>";
+        echo "<input type='hidden' name='cid' value=$code />";
+        echo "<input type='submit' id='add-review' name='add-review' value='Add Review' />";
+        echo "</form>";
+    }
+
+    $selectQuery = "SELECT email, date, comments FROM reviews WHERE cid=? ORDER BY date";
+    $stmt = $db->prepare($selectQuery);
+    $stmt->bind_param('d', $code);
+    $stmt->execute();
+    $stmt->bind_result($email,$date,$comments);
+
+    echo "<div class='comments-area'>";
+    if ($stmt->fetch()) {
+        echo "<div class='comments'>";
+        echo "<h3><strong>Date: $date User: $email</h3>";
+        echo "<p>$comments</p>";
+        echo "</div>";
+    }
+    echo "</div>";
+
+    $stmt->free_result();
 
     echo "</main>";
 
     require('../private/shared/public_footer.php');
     $db->close();
+
+    echo "<script src='../public/js/addreview.js'></script>";
 
 ?>
