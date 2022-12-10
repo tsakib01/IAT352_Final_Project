@@ -1,24 +1,16 @@
-<!-- Uses this page cameras to a watchlist -->
 <?php
-//only shown in the modeldetails.php page when added to the watchlist
+    // Uses this page cameras to a watchlist 
+    // only shown in the modeldetails.php page when added to the watchlist
     session_start();
     require_once("../private/database.php");
     require_once("../private/included_functions.php");
     no_SSL();
 
-    if(isset($_POST['cid']))
+    if(isset($_POST['add-to-watchlist']))
     {
-        $cid = !empty($_POST['cid']) ? $_POST['cid'] : "";
-
-        $_SESSION['cid'] = $cid;
+        $cid = isset($_POST['cid']) ? $_POST['cid'] : "";
 
         $email = $_SESSION['valid_user'];
-        // adds the productCode to the session which was added to the watchlist
-        // and unsets the callback_url since user is logged in
-        if (isset($_SESSION['callback_url']) && $_SESSION['callback_url'] == 'addtowatchlist.php') {
-            $cid = $_SESSION['cid'];
-            unset($_SESSION['callback_url'],$_SESSION['cid']);
-        }
 
         $message = "";
 
@@ -33,10 +25,12 @@
             $stmt->bind_param('sd',$email,$cid);
             $stmt->execute();
                     
-            $message = urlencode("The model has been added to your <a href=\"showwatchlist.php\">watchlist</a>.");
+            $message = "The model has been added to your <a href=\"showwatchlist.php\">watchlist</a>.";
         }
-        //fetch the watchlist for the user
-        redirect_to("cameradetails.php?cid=$cid&message=$message");
+
+
+        $result = array("message" => $message);
+        echo json_encode($result);
     }
 
 ?>

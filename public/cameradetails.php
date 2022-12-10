@@ -55,19 +55,21 @@
 
     // if the product is not in the watch list then a  Add to Watchlist button will be shown
     if (is_logged_in() && !is_in_watchlist($code)) {
-        echo "<form action=\"addtowatchlist.php\" method=\"post\">\n";
+        echo "<form class='add-to-watchlist-form'>\n";
         echo "<input type=\"hidden\" name=\"cid\" value=$code>\n";
         echo "<input class='title-large' type=\"submit\" value=\"Add To Watchlist\">\n";
         echo "</form>\n";
-    } else if (!empty($msg)) { // appropriate message shown if not empty
-        echo "<p class='title-large'><br>$msg</p>";
-    } else if (is_logged_in())  // if the product is already in the watchlist then a message with an embedded link to the watchlist is displayed
+    } 
+    else if (is_logged_in())  // if the product is already in the watchlist then a message with an embedded link to the watchlist is displayed
     {
         echo "<p class='title-large'>This model is already in your <a href=\"showwatchlist.php\">watchlist</a>.<p>";
     }
 
-    echo "<div class='message'></div>";
+    echo "<br><p class='title-large add-message'></p>";
 
+
+
+    // allows the user to add review if logged in using the form 
     if(is_logged_in()){
         echo "<form class='add-review-form'>";
         echo "<h2>Reviews</h2>";
@@ -77,6 +79,10 @@
         echo "</form>";
     }
 
+    // displays a message based on successfully adding a review
+    echo "<div class='message' style='color:yellow'></div>";
+
+    // fetches reviews from the database and shows all available reviews from different users below the page based on the product
     $selectQuery = "SELECT email, date, comments FROM reviews WHERE cid=? ORDER BY date DESC";
     $stmt = $db->prepare($selectQuery);
     $stmt->bind_param('d', $code);
@@ -99,6 +105,6 @@
     require('../private/shared/public_footer.php');
     $db->close();
 
-    echo "<script src='../public/js/addreview.js'></script>";
+    echo "<script src='../public/js/cameradetails.js'></script>";
 
 ?>

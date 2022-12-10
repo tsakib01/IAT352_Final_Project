@@ -319,18 +319,21 @@ main h1 {
 
 /* show watchlist page */
 
-main.watchlist {
-    max-width: 70rem;
+.watchlist {
+    max-width: 90rem;
     margin: 0 auto;
     text-align: left;
 }
 
-main.watchlist h2 {
-    margin-bottom: 0rem;
+.watchlist h2 {
+    margin-bottom: 0.5rem;
 }
 
 .watchlist-item {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
     padding: 1rem 2rem;
@@ -348,42 +351,15 @@ main.watchlist h2 {
     height: auto;
 }
 
-main:last-child form {
-    text-align: center;
-}
-
-main.watchlist form {
-    text-align: right;
-    margin-top: -2.8rem;
-    margin-bottom: 2rem;
-}
-
-main.watchlist form input {
-    margin-top: 0rem;
-    margin-left: auto;
-    margin-right: 1rem;
-    background-color: var(--md-sys-color-primary-container);
-    border: 2px solid var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-    border-radius: 3vmin;
-    padding: 0.5rem 1rem;
-    box-sizing: border-box;
-    outline: none;
-    width: fit-content;
-    height: fit-content;
-    transition: all 0.5s;
-}
 
 .watchlist-item .remove {
-    margin-left: auto;
+    font-size: 1.2rem;
     margin-right: 2rem;
-    margin-top: auto;
-    margin-bottom: auto;
     background-color: var(--md-sys-color-primary-container);
     border: 2px solid var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     border-radius: 3vmin;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     box-sizing: border-box;
     outline: none;
     width: fit-content;
@@ -391,20 +367,25 @@ main.watchlist form input {
     transition: all 0.5s;
 }
 
+.edit-btns {
+    text-align: end;
+}
 
-.watchlist:last-child input {
+.edit-watchlist-btn, .done-editing-btn {
     background-color: var(--md-sys-color-primary);
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 1rem;
     margin: 1rem;
+    border-style: none;
     border-radius: 20px;
 }
 
-.watchlist:last-child input:hover {
+.edit-watchlist-btn:hover, .done-editing-btn:hover {
     background-color: lightblue;
     color: black;
 }
+
 
 
 /* Checkout */

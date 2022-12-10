@@ -1,6 +1,5 @@
-<!-- All required function goes here -->
-
 <?php
+    // All required function goes here 
 
     // checks if https is on
     // if on then changes to http for insecure connection
