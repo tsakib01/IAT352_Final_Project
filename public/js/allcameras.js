@@ -142,7 +142,7 @@ $(document).ready(function(){
 
         //write an AJAX request to send the data to the server (adminApi.php)
         var request = $.ajax({
-            url: "../public/filterlist.php",
+            url: "../public/server/filterlist.php",
             method: "post",
             data: data
         })

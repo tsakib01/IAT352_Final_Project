@@ -10,7 +10,7 @@ $(document).ready(function(){
 
         //write an AJAX request to send the data to the server (addreviews.php)
         var request = $.ajax({
-            url: "../public/addreviews.php",
+            url: "../public/server/addreviews.php",
             method: "post",
             data: data
         })
@@ -53,7 +53,7 @@ $(document).ready(function(){
 
         //write an AJAX request to send the data to the server (addreviews.php)
         var request = $.ajax({
-            url: "../public/addtowatchlist.php",
+            url: "../public/server/addtowatchlist.php",
             method: "post",
             data: data
         })

@@ -28,7 +28,7 @@ $(document).ready(function() {
 
       //write an AJAX request to send the data to the removefromwatchlist.php
       var request = $.ajax({
-          url: "../public/removefromwatchlist.php",
+          url: "../public/server/removefromwatchlist.php",
           method: "post",
           data: data
       })
