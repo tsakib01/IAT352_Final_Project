@@ -22,7 +22,7 @@
     echo "<h2 class='display-medium'>Popular Rentals</h2>";
     echo "<div class='recommend-list'>";
     while ($row = $popularResult->fetch_row()) {
-        format_model_name_as_link($row[0], $row[1],"index.php",$row[14],round($row[13]/10));
+        format_model_name_as_link($row[0], $row[1],"../public/cameradetails.php",$row[14],round($row[13]/10));
     };
     echo "</div>";
     echo "</section>";
@@ -35,7 +35,7 @@
     echo "<div class= 'recommend-list'>";
     //show model name as link here
     while ($row = $lastAddedResult->fetch_row()) {
-        format_model_name_as_link($row[0], $row[1],"index.php",$row[14],round($row[13]/10));
+        format_model_name_as_link($row[0], $row[1],"../public/cameradetails.php",$row[14],round($row[13]/10));
     };
     echo "</div>";
     echo "</section>";
@@ -56,7 +56,7 @@
         echo "<div class= 'recommend-list'>";
         //show model name as link here
         while ($row = $likeResult->fetch_row()) {
-            format_model_name_as_link($row[0], $row[1],"index.php",$row[14],round($row[13]/10));
+            format_model_name_as_link($row[0], $row[1],"../public/cameradetails.php",$row[14],round($row[13]/10));
         };
         echo "</div>";
         echo "</section>";
