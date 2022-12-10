@@ -386,6 +386,11 @@ main h1 {
     color: black;
 }
 
+.show-watchlist-option {
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
 
 
 /* Checkout */
