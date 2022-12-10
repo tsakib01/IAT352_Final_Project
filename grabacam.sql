@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 02:20 AM
+-- Generation Time: Dec 10, 2022 at 11:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `grabacam`
 --
+DROP DATABASE IF EXISTS `grabacam`;
+CREATE DATABASE IF NOT EXISTS `grabacam` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `grabacam`;
 
 -- --------------------------------------------------------
 
@@ -2157,6 +2160,19 @@ CREATE TABLE `rents` (
   `toDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `rents`
+--
+
+INSERT INTO `rents` (`email`, `cid`, `fromDate`, `toDate`) VALUES
+('bot1@bot.com', 1, '2022-12-10', '2022-12-12'),
+('bot1@bot.com', 2, '2022-12-13', '2022-12-16'),
+('bot1@bot.com', 3, '2022-12-11', '2022-12-17'),
+('bot2@bot.com', 1, '2022-12-27', '2022-12-31'),
+('bot2@bot.com', 2, '2022-12-21', '2022-12-23'),
+('bot2@bot.com', 3, '2022-12-18', '2022-12-20'),
+('bot2@bot.com', 5, '2022-12-22', '2022-12-24');
+
 -- --------------------------------------------------------
 
 --
@@ -2183,6 +2199,15 @@ CREATE TABLE `users` (
   `password` char(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`email`, `fname`, `lname`, `password`) VALUES
+('bot1@bot.com', 'bot1f', 'bot1l', '$2y$10$8r3woChu7rARkAW7FnScBuygVAsJe1VsVx928xZkgffzyNycJaC4G'),
+('bot2@bot.com', 'bot2f', 'bot2l', '$2y$10$.QunpO5dDAOBatE4aoMzXOZAXHhlVg6DuSoqQ.reBhW.0dKh95nri'),
+('tosrifjahansakib@gmail.com', 'Tosrif', 'Sakib', '$2y$10$ckZJReoWiEUnxs8kbffRQOjHlu6Cvi9fQUW2WyB0/4Tw25odusQ3y');
+
 -- --------------------------------------------------------
 
 --
@@ -2193,6 +2218,26 @@ CREATE TABLE `watchlist` (
   `email` varchar(254) NOT NULL,
   `cid` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `watchlist`
+--
+
+INSERT INTO `watchlist` (`email`, `cid`) VALUES
+('bot1@bot.com', 3),
+('bot1@bot.com', 4),
+('bot1@bot.com', 6),
+('bot1@bot.com', 7),
+('bot1@bot.com', 8),
+('bot2@bot.com', 1),
+('bot2@bot.com', 2),
+('bot2@bot.com', 3),
+('bot2@bot.com', 4),
+('bot2@bot.com', 5),
+('bot2@bot.com', 6),
+('tosrifjahansakib@gmail.com', 1),
+('tosrifjahansakib@gmail.com', 2),
+('tosrifjahansakib@gmail.com', 3);
 
 --
 -- Indexes for dumped tables
