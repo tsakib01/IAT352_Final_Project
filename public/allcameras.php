@@ -15,7 +15,7 @@
 
     // require("../public/filterlist.php");
 
-    echo "<main>";
+    echo "<main class='allcameras'>";
     echo "<h1 class=\"display-medium\">Camera List</h1>";
     //------------------FILTERING STARTS HERE-----------------------------------------------------------------------------
     echo "<form class='apply-filter-form'>";

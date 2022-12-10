@@ -77,7 +77,7 @@
         echo "</form>";
     }
 
-    $selectQuery = "SELECT email, date, comments FROM reviews WHERE cid=? ORDER BY date";
+    $selectQuery = "SELECT email, date, comments FROM reviews WHERE cid=? ORDER BY date DESC";
     $stmt = $db->prepare($selectQuery);
     $stmt->bind_param('d', $code);
     $stmt->execute();

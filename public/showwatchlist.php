@@ -78,7 +78,7 @@
     while ($row = $result->fetch_assoc()) {
 
         echo "<div class='watchlist-item'>";
-        format_model_name_as_link($row['cid'], $row['model'],"cameradetails.php",$row['url'],$row['price']);
+        format_model_name_as_link($row['cid'], $row['model'],"cameradetails.php",$row['url'],round($row['price']/10));
         if(isset($_SESSION['edit'])){
             format_watchlist_action_link($row['cid'],"Remove from Watchlist","removefromwatchlist.php");
         }

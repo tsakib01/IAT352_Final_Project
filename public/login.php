@@ -43,9 +43,9 @@ require_once('../private/shared/public_header.php');
 <form class="login" action="login.php" method="post">
     <h1 class="display-large">Welcome</h1>
     <?php if (!empty($message)) echo '<p style="text-align: center">' . $message . '</p>' ?>
-    <input class="title-medium" type="email" name="email" placeholder="Please Enter Your Email Adress" value="<?php $email ?>">
+    <input class="title-medium" type="email" name="email" placeholder="Please Enter Your Email Adress" value="<?php $email ?>" required>
     <br />
-    <input class="title-medium" type="password" name="password" placeholder="Please Enter Your Password" value="">
+    <input class="title-medium" type="password" name="password" placeholder="Please Enter Your Password" value="" required>
     <br />
     <input class="title-large" type="submit" name="submit" value="Login">
     <p ><a href="signup.php">Not registered yet? Register here.</a></p>

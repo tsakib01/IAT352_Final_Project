@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img src="../352-LOGO.png" width="70" height="70" alt="logo" style="float: left">
+        <a href="../public/index.php" id='logo-nav'><img src="../352-LOGO.png" width="70" height="70" alt="logo" style="float: left"></a>
         <nav class="title-large">
             <a href="../public/allcameras.php">All Cameras</a>
             <a href="../public/showwatchlist.php">Watch List</a>

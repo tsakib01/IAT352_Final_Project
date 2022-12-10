@@ -100,6 +100,13 @@ header nav div.tooltip img {
     border-bottom: 2px solid var(--md-sys-color-primary);
 }
 
+#logo-nav img:hover, #logo-nav img:focus, #logo-nav img:active{
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    border-width: 0.1rem;
+}
+
 /* signup page */
 
 .signup {
@@ -302,6 +309,11 @@ main h1 {
     height: auto;
     margin: 1rem;
     border-radius: 3vmin;
+}
+
+.allcameras {
+    max-width: 90rem;
+    margin: 0 auto;
 }
 
 
@@ -712,3 +724,38 @@ main .rental-item {
     border: 2px solid var(--md-sys-color-error-container);
 }
 
+
+/* index */
+
+.recommend {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.recommend-list {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.recommend-list a {
+    border-radius: 3vmin;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.recommend-list a:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+.recommend-list img {
+    border-radius: 3vmin;
+    max-width: 20rem;
+    height: auto;
+    margin-top: 0.5rem;
+}

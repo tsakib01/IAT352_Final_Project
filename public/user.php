@@ -85,7 +85,7 @@
         <br />
         <input class="body-large" type="password" name="password2" placeholder="Double Confirm Your New Password" value="">
         <br />
-        <input class="title-meidum" type="submit" name="submit" value="Register">
+        <input class="title-meidum" type="submit" name="submit" value="Apply">
         </form>';
     }
 
