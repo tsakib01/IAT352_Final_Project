@@ -54,13 +54,13 @@
         $selectQuery = "SELECT * FROM rents 
                         WHERE cid=$cid 
                         AND '$from' BETWEEN fromDate AND toDate
-                        OR '$to' BETWEEN fromDate AND toDate";
+                        OR cid=$cid AND '$to' BETWEEN fromDate AND toDate";
 
         $result = $db->query($selectQuery);
         
         $count = 0;
 
-        while($row = $result->fetch_row())
+        while($row = $result->fetch_assoc())
             $count++;
 
         $isValid = $count > 0 ? false : true;
