@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once("../private/database.php");
-    require_once("../private/included_functions.php");
+    require_once("../../private/database.php");
+    require_once("../../private/included_functions.php");
     no_SSL();
 
 

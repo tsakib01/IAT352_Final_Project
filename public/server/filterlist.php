@@ -1,5 +1,5 @@
 <?php
-    require_once('../private/database.php');
+    require_once('../../private/database.php');
 
     $selectQuery = "Select cid, model, price, url FROM cameras JOIN images USING(cid) ";
 

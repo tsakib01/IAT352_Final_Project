@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="../public/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../public/css/main.css" />
-    <script src="../public/js/index.js"></script>
     <script src="../public/js/jquery-3.6.1.js"></script>
 </head>
 

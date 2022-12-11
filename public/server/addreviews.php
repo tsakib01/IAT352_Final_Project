@@ -1,6 +1,6 @@
 <?php
     // Uses this page to add reviews for a camera 
-    require('../private/database.php');
+    require('../../private/database.php');
     session_start();
     $cid = $_POST['cid'];
     $nEmail = $_SESSION['valid_user'];

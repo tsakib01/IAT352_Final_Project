@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once("../private/database.php");
+    require_once("../../private/database.php");
 
     // if the user is logged in and a camera id is passed for removing
 	// then the camera is deleted from the database using email and camera id
